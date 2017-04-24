@@ -1,6 +1,5 @@
 ﻿using Projeto1.Contexts;
 using Projeto1.Models;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
@@ -61,7 +60,7 @@ namespace Projeto01.Controllers
             return View(categoria);
         }
 
-        public ActionResult Details(long id)
+        public ActionResult Details(long? id)
         {
             if (id == null)
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
