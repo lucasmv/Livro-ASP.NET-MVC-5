@@ -94,6 +94,8 @@ namespace Projeto01.Controllers
             context.Categorias.Remove(categoria);
             context.SaveChanges();
 
+            TempData["Message"] = "Categoria " + categoria.Nome.ToUpper() + " foi removido";
+
             return RedirectToAction("Index");
         }
     }
