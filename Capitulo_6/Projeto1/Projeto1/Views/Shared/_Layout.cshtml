@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/content/bootstrap.css")" rel="stylesheet" />
+    @RenderSection("styles", false)
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="page-header">
+                <h1>Desenvolvimento em ASP.NET MVC<small class="text-danger"> Utilizando o Bootstrap </small> </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <ul class="nav nav-pills nav-stacked">
+                    <li id="liHome" role="presentation" class="active"><a href="#">Home</a></li>
+                    <li id="liCategorias" role="presentation">
+                        @Html.ActionLink("Categorias", "Index", "Categorias")
+                    </li>
+                    <li id="liFabricantes" role="presentation">
+                        @Html.ActionLink("Fabricantes", "Index", "Fabricantes")
+                    </li>
+                    <li id="liProdutos" role="presentation">
+                        @Html.ActionLink("Produtos", "Index", "Produtos")
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-9">
+                <br />
+                @RenderBody()
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <hr />
+            <div class="col-md-12 text-center">
+                <small>Layout com Bootstrap</small>
+            </div>
+        </div>
+    </div>
+
+    <script src="@Url.Content("~/scripts/jquery-3.1.1.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.js")">    </script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")"></script>
+    <script src="@Url.Content("~/scripts/bootstrap.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery-ui-1.12.1.custom/jquery-ui.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery-ui-1.12.1.custom/datepicker-pt-BR.js")"></script>
+
+    <script>
+
+        function DataTable() {
+
+            var ptbr = {
+                "oLanguage":
+                {
+                    "sEmptyTable": "Nenhum registro encontrado",
+                    "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
+                    "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                    "sInfoFiltered": "(Filtrados de _MAX_ registros)",
+                    "sInfoPostFix": "",
+                    "sInfoThousands": ".",
+                    "sLengthMenu": "_MENU_ resultados por página",
+                    "sLoadingRecords": "Carregando...",
+                    "sProcessing": "Processando...",
+                    "sZeroRecords": "Nenhum registro encontrado",
+                    "sSearch": "Pesquisar",
+                    "oPaginate": {
+                        "sNext": "Próximo",
+                        "sPrevious": "Anterior",
+                        "sFirst": "Primeiro",
+                        "sLast": "Último"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": Ordenar colunas de forma ascendente",
+                        "sSortDescending": ": Ordenar colunas de forma descendente"
+                    }
+                }
+            };
+
+            $('.table').dataTable(ptbr);
+        }
+
+        function DestacaMenuFabricante() {
+            $('li').removeClass("active");
+            $('#liFabricantes').addClass("active");
+        }
+
+        function DestacaMenuCategoria() {
+            $('li').removeClass("active");
+            $('#liCategorias').addClass("active");
+        }
+
+        function DestacaMenuProduto() {
+            $('li').removeClass("active");
+            $('#liProdutos').addClass("active");
+        }
+
+    </script>
+
+    @RenderSection("ScriptPage", false);
+</body>
+</html>
