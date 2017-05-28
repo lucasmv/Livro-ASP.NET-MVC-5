@@ -308,6 +308,10 @@
     <Content Include="Areas\Seguranca\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Seguranca\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Seguranca\Views\Admin\Index.cshtml" />
+    <Content Include="Areas\Seguranca\Views\Admin\Create.cshtml" />
+    <Content Include="Areas\Seguranca\Views\Admin\Edit.cshtml" />
+    <Content Include="Areas\Seguranca\Views\Admin\Delete.cshtml" />
+    <Content Include="Areas\Seguranca\Views\Account\Login.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -423,8 +427,10 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Cadastros\CadastrosAreaRegistration.cs" />
+    <Compile Include="Areas\Seguranca\Controllers\AccountController.cs" />
     <Compile Include="Areas\Seguranca\Controllers\AdminController.cs" />
     <Compile Include="Areas\Seguranca\Models\Usuario.cs" />
+    <Compile Include="Areas\Seguranca\Models\SegurancaViewModelo.cs" />
     <Compile Include="Areas\Seguranca\SegurancaAreaRegistration.cs" />
     <Compile Include="Areas\Tabelas\TabelasAreaRegistration.cs" />
     <Compile Include="Areas\Tabelas\Controllers\CategoriasController.cs" />

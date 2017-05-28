@@ -5,6 +5,7 @@ using System.Web.Mvc;
 
 namespace Projeto1.Areas.Cadastros.Controllers
 {
+    [Authorize]
     public class FabricantesController : Controller
     {
 

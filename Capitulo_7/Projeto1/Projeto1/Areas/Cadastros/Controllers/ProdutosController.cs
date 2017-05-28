@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace Projeto1.Areas.Cadastros.Controllers
 {
+    [Authorize]
     public class ProdutosController : Controller
     {
         private ProdutoServico produtoServico = new ProdutoServico();

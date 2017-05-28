@@ -1,10 +1,12 @@
 ﻿using Modelo.Tabelas;
 using Servico.Tabelas;
+using System;
 using System.Net;
 using System.Web.Mvc;
 
 namespace Projeto1.Areas.Tabelas.Controllers
 {
+    [Authorize]
     public class CategoriasController : Controller
     {
 
@@ -35,7 +37,7 @@ namespace Projeto1.Areas.Tabelas.Controllers
                 }
                 return View(categoria);
             }
-            catch
+            catch(Exception ex)
             {
                 return View(categoria);
             }
