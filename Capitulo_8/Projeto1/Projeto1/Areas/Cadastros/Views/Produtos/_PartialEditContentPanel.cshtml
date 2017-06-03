@@ -59,7 +59,7 @@
                             <input type="checkbox" name="chkRemoverImagem" value="Sim">Remover imagem
                         </label>
                     </div>
-                   @* @Html.ActionLink("Baixar o arquivo : " + Model.NomeArquivo, "DownloadArquivo", "Produtos", new { area = "Cadastros", id = Model.ProdutoId }, null)*@
+                    @Html.ActionLink("Baixar o arquivo : " + Model.NomeArquivo, "DownloadArquivo", "Produtos", new { area = "Cadastros", id = Model.ProdutoId }, null)
                 </div>
             }
         </div>

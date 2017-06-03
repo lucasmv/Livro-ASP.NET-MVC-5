@@ -1,6 +1,8 @@
 ﻿using Modelo.Cadastros;
 using Servico.Cadastros;
 using Servico.Tabelas;
+using System;
+using System.IO;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
@@ -20,6 +22,7 @@ namespace Projeto1.Areas.Cadastros.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
             Produto produto = produtoServico.ObterProdutoPorId((long)id);
 
             if (produto == null)
@@ -63,6 +66,8 @@ namespace Projeto1.Areas.Cadastros.Controllers
                     {
                         produto.LogotipoMimeType = logotipo.ContentType;
                         produto.Logotipo = SetLogotipo(logotipo);
+                        produto.NomeArquivo = logotipo.FileName;
+                        produto.TamanhoArquivo = logotipo.ContentLength;
                     }
 
                     produtoServico.GravarProduto(produto);
@@ -147,6 +152,16 @@ namespace Projeto1.Areas.Cadastros.Controllers
                 return File(produto.Logotipo, produto.LogotipoMimeType);
            
             return null;
+        }
+
+        public FileResult DownloadArquivo(long id)
+        {
+            Produto produto = produtoServico.ObterProdutoPorId(id);
+
+            FileStream fileStream = new FileStream(Server.MapPath("~/TempData / " + produto.NomeArquivo), FileMode.Create, FileAccess.Write);
+            fileStream.Write(produto.Logotipo, 0, Convert.ToInt32(produto.TamanhoArquivo));
+            fileStream.Close();
+            return File(fileStream.Name, produto.LogotipoMimeType, produto.NomeArquivo);
         }
 
     }

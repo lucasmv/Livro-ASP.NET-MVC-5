@@ -21,7 +21,7 @@ namespace Persistencia.DAL.Cadastros
                 .Where(p => p.ProdutoId == id)
                 .Include(c => c.Categoria)
                 .Include(f => f.Fabricante)
-                .First();
+                .FirstOrDefault();
         }
         public void GravarProduto(Produto produto)
         {
