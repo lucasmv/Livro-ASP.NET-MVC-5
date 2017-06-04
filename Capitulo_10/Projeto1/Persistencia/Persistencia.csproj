@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9C1A8E5D-CE63-4F0D-B317-330BE73CD8E2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Persistencia</RootNamespace>
+    <AssemblyName>Persistencia</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Contexts\EFContext.cs" />
+    <Compile Include="DAL\Cadastros\FabricanteDAL.cs" />
+    <Compile Include="DAL\Cadastros\ProdutoDAL.cs" />
+    <Compile Include="DAL\Tabelas\CategoriaDAL.cs" />
+    <Compile Include="DAL\Tabelas\CidadeDAL.cs" />
+    <Compile Include="DAL\Tabelas\EstadoDAL.cs" />
+    <Compile Include="Migrations\201705242208240_Inicial.cs" />
+    <Compile Include="Migrations\201705242208240_Inicial.Designer.cs">
+      <DependentUpon>201705242208240_Inicial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705242219357_Inicial2.cs" />
+    <Compile Include="Migrations\201705242219357_Inicial2.Designer.cs">
+      <DependentUpon>201705242219357_Inicial2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706030102088_ImagemProduto.cs" />
+    <Compile Include="Migrations\201706030102088_ImagemProduto.Designer.cs">
+      <DependentUpon>201706030102088_ImagemProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706031553174_ImagemProduto2.cs" />
+    <Compile Include="Migrations\201706031553174_ImagemProduto2.Designer.cs">
+      <DependentUpon>201706031553174_ImagemProduto2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706041227240_ValorUnitarioProduto.cs" />
+    <Compile Include="Migrations\201706041227240_ValorUnitarioProduto.Designer.cs">
+      <DependentUpon>201706041227240_ValorUnitarioProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706041939555_AdicicaoCidadeEstado.cs" />
+    <Compile Include="Migrations\201706041939555_AdicicaoCidadeEstado.Designer.cs">
+      <DependentUpon>201706041939555_AdicicaoCidadeEstado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706041947019_AdicicaoCidadeEstadoNaTabelaFabricante.cs" />
+    <Compile Include="Migrations\201706041947019_AdicicaoCidadeEstadoNaTabelaFabricante.Designer.cs">
+      <DependentUpon>201706041947019_AdicicaoCidadeEstadoNaTabelaFabricante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Modelo\Modelo.csproj">
+      <Project>{33d418e6-fb50-4ce8-8775-e7027a1bd9a0}</Project>
+      <Name>Modelo</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201705242208240_Inicial.resx">
+      <DependentUpon>201705242208240_Inicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705242219357_Inicial2.resx">
+      <DependentUpon>201705242219357_Inicial2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706030102088_ImagemProduto.resx">
+      <DependentUpon>201706030102088_ImagemProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706031553174_ImagemProduto2.resx">
+      <DependentUpon>201706031553174_ImagemProduto2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706041227240_ValorUnitarioProduto.resx">
+      <DependentUpon>201706041227240_ValorUnitarioProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706041939555_AdicicaoCidadeEstado.resx">
+      <DependentUpon>201706041939555_AdicicaoCidadeEstado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706041947019_AdicicaoCidadeEstadoNaTabelaFabricante.resx">
+      <DependentUpon>201706041947019_AdicicaoCidadeEstadoNaTabelaFabricante.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

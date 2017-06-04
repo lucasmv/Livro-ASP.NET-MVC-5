@@ -1,0 +1,44 @@
+﻿@model Modelo.Cadastros.Produto
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Visualizando os dados de um PRODUTO";
+}
+
+@using (Html.BeginForm("Edit", "Produtos", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            Alteração dos dados de um PRODUTO
+        </div>
+        <div class="panel-body">
+            @Html.Partial("~/Areas/Cadastros/Views/Produtos/_PartialEditContentPanel.cshtml", Model)
+            <div class="panel-footer panel-info">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Salva Produto" class="btn btn-primary" />
+                    @Html.ActionLink("Retornar para a listagem de PRODUTOS", "Index", null, new { @class = "btn btn-default" })
+                </div>
+                <br />
+                <br />
+            </div>
+        </div>
+    </div>
+}
+
+@section styles{
+    <link href="~/Scripts/jquery-ui-1.12.1.custom/jquery-ui.min.css" rel="stylesheet" />
+}
+
+@section ScriptPage {
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $("#datepicker").datepicker();
+        });
+
+        DestacaMenuProduto();
+
+    </script>
+}
