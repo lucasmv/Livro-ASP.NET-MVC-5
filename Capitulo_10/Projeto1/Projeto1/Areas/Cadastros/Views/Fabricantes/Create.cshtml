@@ -29,6 +29,7 @@
                         @Html.ValidationMessageFor(model => model.EstadoID, "", new { @class = "text-danger" })
                     </div>
                 </div>
+
                 <div class="form-group">
                     @Html.LabelFor(model => model.Cidade, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
@@ -38,6 +39,22 @@
                                data_url = @Url.Action("GetCidadesDoEstado", "Cidades", new { area = "Tabelas" })
                            })
                         @Html.ValidationMessageFor(model => model.CidadeID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.TipoPessoa, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="btn-group col-md-10">
+                        @Html.RadioButtonFor(model => model.TipoPessoa, "Física") Física
+                        @Html.RadioButtonFor(model => model.TipoPessoa, "Jurídica") Jurídica
+                        @Html.ValidationMessageFor(model => model.TipoPessoa, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.EstaAtivo, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="btn-group col-md-10">
+                        @Html.CheckBoxFor(model => model.EstaAtivo, "EstaAtivo") Está Ativo<br />
                     </div>
                 </div>
 

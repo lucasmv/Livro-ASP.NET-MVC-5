@@ -83,6 +83,18 @@
     <Compile Include="Migrations\201706041947019_AdicicaoCidadeEstadoNaTabelaFabricante.Designer.cs">
       <DependentUpon>201706041947019_AdicicaoCidadeEstadoNaTabelaFabricante.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706060008388_addStatusFabricante.cs" />
+    <Compile Include="Migrations\201706060008388_addStatusFabricante.Designer.cs">
+      <DependentUpon>201706060008388_addStatusFabricante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706060015332_addTipoPessoaFabricante.cs" />
+    <Compile Include="Migrations\201706060015332_addTipoPessoaFabricante.Designer.cs">
+      <DependentUpon>201706060015332_addTipoPessoaFabricante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706060016377_addTipoPessoaFabricante2.cs" />
+    <Compile Include="Migrations\201706060016377_addTipoPessoaFabricante2.Designer.cs">
+      <DependentUpon>201706060016377_addTipoPessoaFabricante2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -117,6 +129,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706041947019_AdicicaoCidadeEstadoNaTabelaFabricante.resx">
       <DependentUpon>201706041947019_AdicicaoCidadeEstadoNaTabelaFabricante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706060008388_addStatusFabricante.resx">
+      <DependentUpon>201706060008388_addStatusFabricante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706060015332_addTipoPessoaFabricante.resx">
+      <DependentUpon>201706060015332_addTipoPessoaFabricante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706060016377_addTipoPessoaFabricante2.resx">
+      <DependentUpon>201706060016377_addTipoPessoaFabricante2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
